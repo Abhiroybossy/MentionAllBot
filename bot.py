@@ -39,14 +39,14 @@ async def help(event):
     link_preview=False,
     buttons=(
       [
-        Button.url('📣 Channel', 'https://t.me/harp_tech'),
+        Button.url('📣 Channel', 'https://t.me/X_TEAM_IMMORTALS_X'),
         Button.url('📦 Source', 'https://github.com/AnjanaMadu/MentionAllBot')
       ]
     )
   )
   
 @client.on(events.NewMessage(pattern="^/all ?(.*)"))
-async def mentionall(event):
+async def all(event):
   chat_id = event.chat_id
   if event.is_private:
     return await event.respond("__This command can be use in groups and channels!__")
@@ -71,7 +71,7 @@ async def mentionall(event):
     ):
       is_admin = True
   if not is_admin:
-    return await event.respond("__Only admins can mention all!__")
+    return await event.respond("__Only admins can all!__")
   
   if event.pattern_match.group(1) and event.is_reply:
     return await event.respond("__Give me one argument!__")
